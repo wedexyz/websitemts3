@@ -1,0 +1,468 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="download.jpeg">
+  <link rel="stylesheet" href="clientcss/map.css">
+  
+<audio id="alarm_1"><source src="bhy.wav" type="audio/ogg"></audio>
+<audio id="alarm_2"><source src="bhy.wav" type="audio/ogg"></audio>
+<audio id="alarm_3"><source src="bhy.wav" type="audio/ogg"></audio>
+<audio id="alarm_4"><source src="bhy.wav" type="audio/ogg"></audio>
+
+<audio id="warn_1"><source src="warning.wav" type="audio/ogg"></audio>
+<audio id="warn_2"><source src="warning.wav" type="audio/ogg"></audio>
+<audio id="warn_3"><source src="warning.wav" type="audio/ogg"></audio>
+<audio id="warn_4"><source src="warning.wav" type="audio/ogg"></audio>
+
+  <title>Deteksi Jantung</title>
+  <!--     Fonts and icons     -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+  <!-- Nucleo Icons -->
+  <link href="assets/css/nucleo-icons.css" rel="stylesheet" />
+  <link href="assets/css/nucleo-svg.css" rel="stylesheet" />
+  <!-- Font Awesome Icons -->
+  <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+  <link href="assets/css/nucleo-svg.css" rel="stylesheet" />
+  <!-- CSS Files -->
+  <link id="pagestyle" href="assets/css/soft-ui-dashboard.css?v=1.0.3" rel="stylesheet" />
+  <link rel="stylesheet" href="clientcss/bootstrap.min.css">
+  <link rel="stylesheet" href="clientcss/style.css">
+  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+  integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+  
+</head>
+
+<body class="g-sidenav-show  bg-gray-100" >
+
+  <div  >
+    <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 " id="sidenav-main">
+    <div class="sidenav-header">
+      <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
+      <a class="navbar-brand m-0" href="#" target="_blank">
+        
+        <span class="ms-1 font-weight-bold">Mtsn 3 Banyuwangi</span>
+      </a>
+    </div>
+    <hr class="horizontal dark mt-0">
+    <div class="collapse navbar-collapse  w-auto  max-height-vh-100 h-100" id="sidenav-collapse-main">
+      <ul class="navbar-nav">
+         
+        <li class="nav-item">
+          <a class="nav-link  " href="https://wedexyz.github.io/EWSMainUniba/">
+            <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+              <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <title>box-3d-50</title>
+                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <g transform="translate(-2319.000000, -291.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                    <g transform="translate(1716.000000, 291.000000)">
+                      <g transform="translate(603.000000, 0.000000)">
+                        <path class="color-background" d="M22.7597136,19.3090182 L38.8987031,11.2395234 C39.3926816,10.9925342 39.592906,10.3918611 39.3459167,9.89788265 C39.249157,9.70436312 39.0922432,9.5474453 38.8987261,9.45068056 L20.2741875,0.1378125 L20.2741875,0.1378125 C19.905375,-0.04725 19.469625,-0.04725 19.0995,0.1378125 L3.1011696,8.13815822 C2.60720568,8.38517662 2.40701679,8.98586148 2.6540352,9.4798254 C2.75080129,9.67332903 2.90771305,9.83023153 3.10122239,9.9269862 L21.8652864,19.3090182 C22.1468139,19.4497819 22.4781861,19.4497819 22.7597136,19.3090182 Z"></path>
+                        <path class="color-background opacity-6" d="M23.625,22.429159 L23.625,39.8805372 C23.625,40.4328219 24.0727153,40.8805372 24.625,40.8805372 C24.7802551,40.8805372 24.9333778,40.8443874 25.0722402,40.7749511 L41.2741875,32.673375 L41.2741875,32.673375 C41.719125,32.4515625 42,31.9974375 42,31.5 L42,14.241659 C42,13.6893742 41.5522847,13.241659 41,13.241659 C40.8447549,13.241659 40.6916418,13.2778041 40.5527864,13.3472318 L24.1777864,21.5347318 C23.8390024,21.7041238 23.625,22.0503869 23.625,22.429159 Z"></path>
+                        <path class="color-background opacity-6" d="M20.4472136,21.5347318 L1.4472136,12.0347318 C0.953235098,11.7877425 0.352562058,11.9879669 0.105572809,12.4819454 C0.0361450918,12.6208008 6.47121774e-16,12.7739139 0,12.929159 L0,30.1875 L0,30.1875 C0,30.6849375 0.280875,31.1390625 0.7258125,31.3621875 L19.5528096,40.7750766 C20.0467945,41.0220531 20.6474623,40.8218132 20.8944388,40.3278283 C20.963859,40.1889789 21,40.0358742 21,39.8806379 L21,22.429159 C21,22.0503869 20.7859976,21.7041238 20.4472136,21.5347318 Z"></path>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </svg>
+            </div>
+            <span class="nav-link-text ms-1">Halaman Utama</span>
+          </a>
+        </li>
+    
+        
+      </ul>
+    </div>
+    
+    </aside>
+
+ 
+
+    <!-- End Navbar -->
+    <div class="container-fluid py-4">
+      
+      <div class="row">
+        <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+          <div class="card">
+            <div class="card-body p-3">
+              <div class="row">
+                <div class="col-8">
+                  <div class="numbers">
+                    <p class="text-sm mb-0 text-capitalize font-weight-bold">Mtsn 3 Banyuwangi</p>
+      
+                
+                  </div>
+                </div>
+                <div class="col-4 text-end">
+                  <img src="download.jpeg"  height=50>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+          <div class="card">
+            <div class="card-body p-3">
+              <div class="row">
+                <div class="col-8">
+                  <div class="numbers">
+                    <p class="text-sm mb-0 text-capitalize font-weight-bold">BPM</p>
+                    <h5 class="font-weight-bolder mb-0" id ="data1"></h5>
+                    
+                  </div>
+                </div>
+                <div class="col-4 text-end">
+                  <div class="icon icon-shape  bg-success shadow text-center border-radius-md">
+                    <i class="fa fa-heartbeat"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+          <div class="card">
+            <div class="card-body p-3">
+              <div class="row">
+                <div class="col-8">
+                  <div class="numbers">
+                    <p class="text-sm mb-0 text-capitalize font-weight-bold">SPo2</p>
+                    <h5 class="font-weight-bolder mb-0" id="data2">
+                
+                    </h5> 
+                  </div>
+                </div>
+                <div class="col-4 text-end">
+                  <div class="icon icon-shape bg-success shadow text-center border-radius-md">
+                    <i class="ni ni-world text-lg opacity-10" aria-hidden="true"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+          <div class="card">
+            <div class="card-body p-3">
+              <div class="row">
+                <div class="col-8">
+                  <div class="numbers">
+                    <p class="text-sm mb-0 text-capitalize font-weight-bold">Suhu</p>
+                    <h5 class="font-weight-bolder mb-0" id="data3">
+                    </h5>
+                  </div>
+                 
+                </div>
+                <div class="col-4 text-end">
+                  <div class="icon icon-shape bg-success shadow text-center border-radius-md">
+                    <i class="ni ni-paper-diploma text-lg opacity-10" aria-hidden="true"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+      
+      <div class="row mt-4">
+        <div class="col-lg-12 mb-lg-0 mb-4">
+          <div class="card z-index-2">
+            <div class="card-body p-3">
+             
+              <div id="chartdiv1" style = "height: 150px;"></div>
+              <hr>
+            
+              
+
+             
+              </div>
+            </div>
+        </div>
+
+      
+   
+      </div>
+        
+      
+    </div>
+    </div>
+
+
+
+    </div>
+
+
+		
+  </div>
+  
+
+
+
+
+
+
+
+
+  <script src="assets/js/plugins/perfect-scrollbar.min.js"></script>
+  <script src="assets/js/plugins/smooth-scrollbar.min.js"></script>
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/highcharts-more.js"></script>
+  <script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+  <script src="https://code.highcharts.com/modules/export-data.js"></script>
+  <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+<script>
+   var win = navigator.platform.indexOf('Win') > -1;
+    if (win && document.querySelector('#sidenav-scrollbar')) {
+      var options = {
+        damping: '0.5'
+      }
+      Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+    }
+</script>
+
+<script src="assets/js/soft-ui-dashboard.min.js?v=1.0.3"></script>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/chart.js"></script>
+<script src="assets/js/anim.js"></script>
+
+<script src="clientjs/jquery-3.2.1.slim.min.js"></script>
+<script src="clientjs/pooper.min.js"></script>
+<script src="clientjs/bootsratp.min.js"></script>
+<script src="clientjs/firebase.js"></script>
+
+
+
+<script src="clientjs/hiden.js"></script>
+<script src="clientjs/reset.js"></script>
+<script src="clientjs/loading.js"></script>
+
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+ <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
+
+
+
+<script>
+ 
+
+ var config = {
+  apiKey: "AIzaSyBYVwVZUBLXSm7iR5Fp6k-dziJGEuhwExk",
+  authDomain: "megaboth007.firebaseapp.com",
+  databaseURL: "https://megaboth007.firebaseio.com",
+  projectId: "megaboth007",
+  storageBucket: "megaboth007.appspot.com",
+  messagingSenderId: "942424390212",
+  appId: "1:942424390212:web:c3622743b0fba57b5a1a11"
+
+  };
+firebase.initializeApp(config);
+
+var db = firebase.database();
+  
+var bpm   = db.ref("mts/bpm");
+var spo2  = db.ref("mts/spo2");;
+var suhu  = db.ref("mts/suhu");;
+
+
+$(document).ready(function () {
+
+
+  bpm.on("value", function(snapshot) {
+    
+    dataout1 = (snapshot.val());
+   
+      
+
+    document.getElementById("data1").innerHTML= dataout1;
+   
+  
+  
+  });
+  spo2.on("value", function(snapshot) {document.getElementById("data2").innerHTML= snapshot.val();});
+  suhu.on("value", function(snapshot) {document.getElementById("data3").innerHTML= snapshot.val();});
+am4core.ready(function() {
+    
+    // Themes begin
+    am4core.useTheme(am4themes_animated);
+    // Themes end
+    
+    var chart = am4core.create("chartdiv1", am4charts.XYChart);
+    chart.hiddenState.properties.opacity = 0;
+    
+    chart.padding(0, 0, 0, 0);
+    
+    chart.zoomOutButton.disabled = true;
+    
+    var data = [];
+    var visits = 0;
+    var i = 0;
+    
+    for (i = 0; i <= 100; i++) {
+        data.push({ date: new Date().setSeconds(i - 30), value: visits });
+    }
+    
+    chart.data = data;
+    
+    var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
+    dateAxis.renderer.grid.template.location = 0;
+    dateAxis.renderer.minGridDistance = 30;
+    dateAxis.dateFormats.setKey("second", "ss");
+    dateAxis.periodChangeDateFormats.setKey("second", "[bold]h:mm a");
+    dateAxis.periodChangeDateFormats.setKey("minute", "[bold]h:mm a");
+    dateAxis.periodChangeDateFormats.setKey("hour", "[bold]h:mm a");
+    dateAxis.renderer.inside = true;
+    dateAxis.renderer.axisFills.template.disabled = true;
+    dateAxis.renderer.ticks.template.disabled = true;
+    
+    var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+    valueAxis.tooltip.disabled = true;
+    valueAxis.interpolationDuration = 500;
+    valueAxis.rangeChangeDuration = 100;
+    valueAxis.renderer.inside = true;
+    valueAxis.renderer.minLabelPosition = 0.05;
+    valueAxis.renderer.maxLabelPosition = 0.95;
+    valueAxis.renderer.axisFills.template.disabled = true;
+    valueAxis.renderer.ticks.template.disabled = true;
+    
+    var series = chart.series.push(new am4charts.LineSeries());
+    series.dataFields.dateX = "date";
+    series.dataFields.valueY = "value";
+    series.interpolationDuration = 500;
+    series.defaultState.transitionDuration = 0;
+    series.tensionX = 0.8;
+    
+    chart.events.on("datavalidated", function () {
+        dateAxis.zoom({ start: 1 / 15, end: 1.2 }, false, true);
+    });
+    
+    dateAxis.interpolationDuration = 500;
+    dateAxis.rangeChangeDuration = 500;
+    
+    document.addEventListener("visibilitychange", function() {
+        if (document.hidden) {
+            if (interval) {
+                clearInterval(interval);
+            }
+        }
+        else {
+            startInterval();
+        }
+    }, false);
+    
+    // add data
+    var interval;
+    function startInterval() {
+        interval = setInterval(function() {
+          //sensor
+            bpm.on("value", function(snapshot) {
+
+            visits=  (snapshot.val());
+
+            if (visits ==0  ){
+     
+     //document.getElementById("alarm_1").pause();
+         document.getElementById("warn_1").pause();
+           }
+     
+    if (visits >30 && visits <50){
+     
+     // document.getElementById("alarm_1").pause();
+          document.getElementById("warn_1").play();
+            }
+           
+                });
+           
+            var lastdataItem = series.dataItems.getIndex(series.dataItems.length - 1);
+            chart.addData({ date: new Date(lastdataItem.dateX.getTime() + 1000), value: visits } );
+          
+            
+        }, 500);
+    }
+    
+    startInterval();
+    
+    // all the below is optional, makes some fancy effects
+    // gradient fill of the series
+    series.fillOpacity = 1;
+    var gradient = new am4core.LinearGradient();
+    gradient.addColor(chart.colors.getIndex(0), 0.2);
+    gradient.addColor(chart.colors.getIndex(0), 0);
+    series.fill = gradient;
+    
+    // this makes date axis labels to fade out
+    dateAxis.renderer.labels.template.adapter.add("fillOpacity", function (fillOpacity, target) {
+        var dataItem = target.dataItem;
+        return dataItem.position;
+    })
+    
+    // need to set this, otherwise fillOpacity is not changed and not set
+    dateAxis.events.on("validated", function () {
+        am4core.iter.each(dateAxis.renderer.labels.iterator(), function (label) {
+            label.fillOpacity = label.fillOpacity;
+        })
+    })
+    
+    // this makes date axis labels which are at equal minutes to be rotated
+    dateAxis.renderer.labels.template.adapter.add("rotation", function (rotation, target) {
+        var dataItem = target.dataItem;
+        if (dataItem.date && dataItem.date.getTime() == am4core.time.round(new Date(dataItem.date.getTime()), "minute").getTime()) {
+            target.verticalCenter = "middle";
+            target.horizontalCenter = "left";
+            return -90;
+        }
+        else {
+            target.verticalCenter = "bottom";
+            target.horizontalCenter = "middle";
+            return 0;
+        }
+    })
+    
+    // bullet at the front of the line
+    var bullet = series.createChild(am4charts.CircleBullet);
+    bullet.circle.radius = 5;
+    bullet.fillOpacity = 1;
+    bullet.fill = chart.colors.getIndex(0);
+    bullet.isMeasured = false;
+    
+    series.events.on("validated", function() {
+        bullet.moveTo(series.dataItems.last.point);
+        bullet.validatePosition();
+    });
+    
+    }); 
+
+
+
+
+
+});
+
+
+
+
+</script>
+
+ 
+
+
+
+
+
+</body>
+
+</html>
